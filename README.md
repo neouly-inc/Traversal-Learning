@@ -74,7 +74,7 @@ python node/main.py --node_id <node_id> --host <orchestrator_host> --port <orche
 Example (for Node 0, connecting to the above orchestrator):
 
 ```bash
-python node/main.py --node_id 0 --host 127.0.0.1 --port 12345 --num_nodes 3
+python node/main.py --node_id 1 --host 127.0.0.1 --port 12345 --num_nodes 3
 ```
 
 Arguments:
