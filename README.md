@@ -49,7 +49,7 @@ python orchestrator/main.py --num_nodes <number_of_nodes> --epochs <num_epochs> 
 Example:
 
 ```bash
-python orchestrator/main.py --num_nodes 3 --epochs 10 --batch_size 64 --lr 0.01 --gamma 0.7 --host 127.0.0.1 --port 5000
+python orchestrator/main.py --num_nodes 3 --epochs 10 --batch_size 64 --lr 0.01 --gamma 0.7 --host 127.0.0.1 --port 12345
 ```
 
 Arguments:
@@ -60,7 +60,7 @@ Arguments:
 * <code>--lr</code>: Initial learning rate for the optimizer.
 * <code>--gamma</code>: Multiplicative factor for learning rate decay.
 * <code>--host</code>: (Optional) Host address for the orchestrator server (default: 127.0.0.1).
-* <code>--port</code>: (Optional) Port for the orchestrator server (default: 5000).
+* <code>--port</code>: (Optional) Port for the orchestrator server (default: 12345).
 * <code>--no-accel</code>: (Optional) Use CPU even if an accelerator (GPU) is available.
 
 ### 2. Run the Nodes
@@ -74,7 +74,7 @@ python node/main.py --node_id <node_id> --host <orchestrator_host> --port <orche
 Example (for Node 0, connecting to the above orchestrator):
 
 ```bash
-python node/main.py --node_id 0 --host 127.0.0.1 --port 5000 --num_nodes 3
+python node/main.py --node_id 0 --host 127.0.0.1 --port 12345 --num_nodes 3
 ```
 
 Arguments:
