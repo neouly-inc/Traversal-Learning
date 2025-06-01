@@ -8,8 +8,8 @@ A TL Node is responsible for:
 
 * **Local Data Management**: Stores and manages its private local dataset. Raw data never leaves the node. Each node independently indexes its local dataset.
 * **Partial Forward Propagation (FP)**: The orchestrator first separates the forward propagation (FP) concerns to the nodes. During FP, the model traverses through the nodes in the specified order, with each node processing its allocated data.
-* **Gradient Computation**: Each node computes the first-layer activations and gradients for its local data subset. Each node also performs forward propagation through the full model locally to compute the predicted outputs and true labels, then calculates the last-layer gradient.
-* **Secure Communication**: Nodes send their first-layer activations, first-layer gradients, and last-layer gradients to the orchestrator. By transmitting only these specific values, TL minimizes communication overhead compared to transferring the entire model or activations and gradients from all layers.
+* **Gradient Computation**: Each node computes the second-layer activations and last-layer gradients for its local data subset. Each node also performs forward propagation through the full model locally to compute the predicted outputs and true labels, then calculates the last-layer gradient.
+* **Secure Communication**: Nodes send their second-layer activations and last-layer gradients to the orchestrator. By transmitting only these specific values, TL minimizes communication overhead compared to transferring the entire model or activations and gradients from all layers.
 * **Model Synchronization**: Receives updated model parameters from the orchestrator.
 
 ## Directory Structure
