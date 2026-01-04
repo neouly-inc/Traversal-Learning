@@ -73,9 +73,9 @@ class TaskProcessor:
         self.padding_right = task_data.get("padding_right")
         
         act_fc1 = torch.cat((
-            torch.zeros(self.padding_left, self.model.activations["fc1"].shape[1]),
+            torch.zeros(self.padding_left, self.model.activations["fc1"].shape[1]).to(self.device),
             self.model.activations["fc1"],
-            torch.zeros(self.padding_right, self.model.activations["fc1"].shape[1])
+            torch.zeros(self.padding_right, self.model.activations["fc1"].shape[1]).to(self.device)
         ), dim=0)
 
         grad_fc2 = torch.matmul(grad_z2.T, act_fc1)
@@ -93,9 +93,9 @@ class TaskProcessor:
         grad_z1 = task_data.get("grad_z1")
         
         x = torch.cat((
-            torch.zeros(self.padding_left, self.model.activations["x"].shape[1]),
+            torch.zeros(self.padding_left, self.model.activations["x"].shape[1]).to(self.device),
             self.model.activations["x"],
-            torch.zeros(self.padding_right, self.model.activations["x"].shape[1])
+            torch.zeros(self.padding_right, self.model.activations["x"].shape[1]).to(self.device)
         ), dim=0)
 
         grad_fc1 = torch.matmul(grad_z1.T, x)
