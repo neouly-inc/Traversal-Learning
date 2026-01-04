@@ -1,5 +1,7 @@
 # Traversal Learning (TL) for Lossless and Efficient Distributed Learning
 
+![My Screenshot](TL.png)
+
 This repository contains the full source code for Traversal Learning, along with a comparative centralized learning baseline, enabling researchers and developers to replicate experiments and explore the benefits of TL.
 
 ## Architecture
