@@ -83,7 +83,7 @@ class Node:
                 try:
                     # Use a timeout for receiving data to allow for periodic checks of self.running
                     # This prevents blocking indefinitely if orchestrator is silent but alive
-                    receive_timeout = 5.0
+                    receive_timeout = 300
                     received_data = self.network_client.receive(timeout=receive_timeout)
 
                     if received_data is None:
