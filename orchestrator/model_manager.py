@@ -31,7 +31,7 @@ class ModelManager:
             transforms.ToTensor(),
             transforms.Normalize((0.1307,), (0.3081,))
         ])
-        test_set = datasets.MNIST('../data', train=False, transform=transform)
+        test_set = datasets.MNIST('../data', train=False, transform=transform, download=True)
         self.test_loader = torch.utils.data.DataLoader(test_set)
 
     def get_parameters(self):
